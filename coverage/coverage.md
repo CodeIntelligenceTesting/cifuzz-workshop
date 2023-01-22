@@ -1,12 +1,14 @@
 # Coverage
 
-To be able to use coverage gutter in vscode, we need to modify settings.json file
+- Requirements
+    - lcov package (sudo apt install lcov)
+    - Coverage Gutters (VSCode Extensions Marketplace)
+
+To be able to use Coverage Gutters in vscode, we need to modify settings.json file
 
 ```json
 
 {
-    "python.defaultInterpreterPath": "/usr/bin/python3",
-    "files.autoSave": "afterDelay",
     "coverage-gutters.coverageFileNames": [
         //"lcov.info",
         "cov.xml",
@@ -17,3 +19,8 @@ To be able to use coverage gutter in vscode, we need to modify settings.json fil
     ]
 }
 ```
+
+- Command to create lcov file
+    - ```cifuzz coverage --format lcov <fuzztarget>```
+- Command to create html report
+    - ```cifuzz coverage <fuzztarget>```
